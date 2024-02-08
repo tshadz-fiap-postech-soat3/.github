@@ -7,11 +7,5 @@ on:
     branches: [ $default-branch ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run a one-line script
-        run: echo Hello
+  call-workflow:
+    uses: tshadz-fiap-postech-soat3/ci-pipeline/.github/workflows/ci-pipeline.yml@$default-branch
