@@ -1,14 +1,3 @@
-# name: Pipeline Workflow
-
-# on:
-#   push:
-#     branches: [ $default-branch ]
-#   pull_request:
-#     branches: [ $default-branch ]
-
-# jobs:
-#   call-workflow-branch-ref:
-#     uses: tshadz-fiap-postech-soat3/ci-pipeline/.github/workflows/ci-pipeline.yml@$default-branch
 name: Pipeline Workflow
 
 on:
