@@ -9,7 +9,7 @@
 # jobs:
 #   call-workflow-branch-ref:
 #     uses: tshadz-fiap-postech-soat3/ci-pipeline/.github/workflows/ci-pipeline.yml@$default-branch
-name: Octo Organization CI
+name: Pipeline Workflow
 
 on:
   push:
@@ -20,9 +20,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+  call-workflow-branch-ref:
+    uses: tshadz-fiap-postech-soat3/ci-pipeline/.github/workflows/ci-pipeline.yml@$default-branch
+    # steps:
+    #   - uses: actions/checkout@v4
 
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run a one-line script
-        run: echo Hello from Octo Organization
+    #   - name: Run a one-line script
+    #     run: echo Hello from Octo Organization
