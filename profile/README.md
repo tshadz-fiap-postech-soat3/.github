@@ -75,3 +75,10 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/bf9bf313-59
 https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/caf87b0f-740b-4c95-889e-866375457c6f
 
 </details>
+
+<details>
+  <summary> <h2> Customer API + MongoDB </h2> </summary>
+
+https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/d4b8498b-53ab-4bba-abb4-b0e71cf07028
+
+</details>
