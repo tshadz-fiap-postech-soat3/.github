@@ -43,7 +43,7 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/2d0483ab-59
 
 https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/d6b1bfa6-e4e0-41b9-b621-c21aa9011c52
 
-https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/5e62e775-a1c8-44c0-bd1d-cb482c41b4e4
+https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/67262cab-4468-48ea-b1dc-a12b1c170c5a
 
 </details>
 
