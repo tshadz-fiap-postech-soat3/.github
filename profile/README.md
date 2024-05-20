@@ -60,8 +60,6 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/be011672-5e
 
 https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/75b12ae5-95bb-4952-8ccc-8915807409dc
 
-https://github.com/tshadz-fiap-postech-soat3/.github/blob/main/profile/README.md#deploy-database
-
 </details>
 
 <details>
