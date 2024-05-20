@@ -6,6 +6,21 @@
 - `product-api`: MSA - Produtos.
   - [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api)
 
+<details>
+  <summary> <h2> Entregáveis FASE 4 </h2> </summary>
+  
+- [x] Refatorar o projeto em 3 microsserviços
+- [x] Utilizar ao menos um banco de dados NoSQL e um SQL
+- [x] Os serviços devem se comunicar entre si
+- [x] Os serviços devem conter testes unitários
+- [x] Ao menos um dos caminhos de teste deve implementar BDD
+- [x] Todo os projetos devem ter ao menos 80% de cobertura
+- [x] Os repositórios precisam ser separados
+- [x] A branc main precisa estar protegida
+- [x] PR para branch main deve validar o build da aplicação e a qualidade de código via sonarqube ou similar
+- [x] O deploy dos microsserviços precisa ter automatizado
+
+</details>
 
 <details>
   <summary> <h2> Descrição do projeto </h2> </summary>
