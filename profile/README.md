@@ -16,7 +16,7 @@
 ![image](https://github.com/user-attachments/assets/ef12c18c-0ba2-4270-b199-c2d44fe7cd8d)
 
 
-## FASE 4
+## FASE 4 - Arquitetura de Microserviços
 <details>
   <summary> <h2> Entregáveis FASE 4 </h2> </summary>
   
@@ -125,7 +125,7 @@ https://github.com/user-attachments/assets/9993a899-60ad-479e-afed-284d28f1c840
 
 </details>
 
-## FASE 5
+## FASE 5 - Dados e segurança da informação
 
 <details>
   <summary> <h2> Entregáveis FASE 5 </h2> </summary>
@@ -141,7 +141,7 @@ https://github.com/user-attachments/assets/9993a899-60ad-479e-afed-284d28f1c840
 </details>
 
 <details>
-  <summary> <h2> SAGA </h2> </summary>
+  <summary> <h2> SAGA Pattern </h2> </summary>
   
 O vídeo explicativo da implementação da SAGa Orquestrada pode ser acessado através do seguinte link:
 
@@ -205,7 +205,7 @@ Diagrama da estrutura na nuvem e comunicação SAGA:
 </details>
 
 <details>
-  <summary> <h2> DevSecOps - Pipeline / OWASP Zap - Reports </h2> </summary>
+  <summary> <h2> Desenvolvimento Seguro - DevSecOps - Pipeline / OWASP Zap - Reports </h2> </summary>
 
 A pipeline de DevSecOps para este projeto pode ser acessada através do seguinte link:
 
@@ -275,8 +275,33 @@ ________________________________
 </details>
 
 <details>
-  <summary> <h2> LGPD </h2> </summary>
-  
+  <summary> <h2> Privacidade de Dados e LGPD </h2> </summary>
+
+### RIPD - Relatório de Impacto à Proteção dos Dados Pessoais
+
+Aqui está o relatório de impacto:
+
 [LGPD - RIPD - PosTech-SOAT3-G68](https://docs.google.com/document/d/1VQAqVCFKz5fwItgQyFCmHVlZqSLtLnqX/edit?usp=drive_link&ouid=115953080927918010909&rtpof=true&sd=true)
+________________________________
+
+### Rota para inativação dos dados do cliente
+
+Código para inativação dos dados do cliente no banco de dados:
+
+```bash
+await this.prisma.customer.update({
+      where: { id },
+      data: {
+        name: 'INACTIVE_NAME',
+        cpf: 'INACTIVE_CPF',
+        email: 'INACTIVE_EMAIL',
+        address: 'INACTIVE_ADDRESS',
+  },
+});
+```
+Demonstração da chamada para inativar os dados do cliente
+
+https://github.com/user-attachments/assets/9f818c78-c70c-4e0a-8e71-d68ef516b6cf
+
 
 </details>
