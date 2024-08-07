@@ -1,10 +1,18 @@
 ## Estrutura do Projeto
-- `order-api`: MSA - Gestão de pedidos.
+- `.github`: template do CICD
+- `ci-pipeline`: contém o código de integração
+- `cd-pipeline`: contém o código de deploy
+- `devsecops-pipeline`:  contém os testes de segurança
+- `terraform-cloud-infra`:  repo responsável pelo deploy da imagem utilizando o cloud run
+- `terraform-database`: repo responsável pelo deploy de todos os bancos
+- `order-orchestrator-api`: repo contém o código do orquestrador de pedidos e lógica para deploy no GCP
+- `order-api`: este repositório contém o código da api de pedidos e a lógica para deploy no GCP
   - [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api)
-- `customer-api`: MSA - Cliente
+- `customer-api`: este repositório contém o código da api de customer e a lógica para deploy no GCP
   - [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api)
-- `product-api`: MSA - Produtos.
+- `product-api`: este repositório contém o código da api de produtos e a lógica para deploy no GCP
   - [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api)
+
 
 ## FASE 4
 <details>
@@ -100,11 +108,18 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/caf87b0f-74
 </details>
 
 <details>
-  <summary> <h2> Customer API + MongoDB + auth </h2> </summary>
+  <summary> <h2> Customer API + MongoDB </h2> </summary>
 
 https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/d4b8498b-53ab-4bba-abb4-b0e71cf07028
 
 https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/148071b1-d4ba-4f23-b0ab-d8718b2cf531
+
+</details>
+
+<details>
+  <summary> <h2> User Authentication - Cloud Functions + Firebase </h2> </summary>
+
+https://github.com/user-attachments/assets/9993a899-60ad-479e-afed-284d28f1c840
 
 </details>
 
@@ -125,16 +140,81 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/148071b1-d4
 
 <details>
   <summary> <h2> SAGA </h2> </summary>
+  
+O vídeo explicativo da implementação da SAGa Orquestrada pode ser acessado através do seguinte link:
+
+[SAGA Orquestrada Vídeo](https://drive.google.com/file/d/1Wg2Wze2vEdpC86JXzlcyIk-llbr2Y9C3/view?usp=drive_link)
+
+### Orquestração
+
+1. Redução de Acoplamento:
+  - Desacoplamento dos Serviços: Uma saga orquestrada ajuda a desacoplar os microsserviços, permitindo que cada um funcione de forma independente. Isso facilita a substituição ou atualização de um serviço sem afetar os demais.
+  - Interação Definida: A orquestração define claramente como os serviços interagem, reduzindo a complexidade e dependência entre eles.
+2. Facilidade de Manutenção e Debug:
+  - Visibilidade do Fluxo de Processos: Com uma saga orquestrada, o fluxo de transações é centralizado, tornando mais fácil monitorar, depurar e entender o estado do sistema.
+  - Gerenciamento de Erros: A orquestração pode tratar erros e compensações de forma centralizada, o que simplifica a identificação e a correção de problemas.
+3. Custo e Eficiência:
+  - Menos Mão de Obra Necessária: Automatizar o gerenciamento de transações e processos reduz a necessidade de intervenção manual e, portanto, o custo com mão de obra.
+  - Serviço Terceirizado: Com serviços terceirizados e uma orquestração bem definida, a manutenção e o desenvolvimento podem ser mais facilmente gerenciados por terceiros, reduzindo custos operacionais.
+4. Flexibilidade e Escalabilidade:
+  - Escalabilidade Individual: Cada serviço pode ser escalado de forma independente conforme a demanda, o que é ideal para sistemas com altos volumes de pedidos e variações na carga de trabalho.
+  - Adaptação a Mudanças: Mudanças nos requisitos do negócio ou na arquitetura do sistema podem ser incorporadas com menos esforço, pois a orquestração pode ser ajustada sem afetar todos os serviços.
+5. Transparência e Controle:
+  - Monitoramento Centralizado: A orquestração centraliza o monitoramento dos processos, proporcionando uma visão clara de todo o fluxo e facilitando a identificação de problemas ou gargalos.
+  - Auditoria e Compliance: Ter um controle centralizado sobre as transações pode ajudar a garantir conformidade com regulamentos e facilitar auditorias.
+6. Coerência e Consistência:
+  - Gerenciamento de Estado: Uma saga orquestrada assegura que todos os passos do processo sejam gerenciados de forma coerente, garantindo a consistência dos dados e a integridade das transações.
+________________________________
+### Arquitetura e fluxo de dados
+Diagrama da estrutura na nuvem e comunicação SAGA:
+
+![diagrama de architetura](https://github.com/user-attachments/assets/796d299b-fa97-4c2f-8dbe-259af5bd9ebf)
+
+
+![saga orquestrada](https://github.com/user-attachments/assets/281b7719-1d53-459a-93d0-b4a70b325a2c)
+
+
+- Filas
+  - create_order: Solicita a criação de um novo pedido.
+  - order_created: Notifica que um pedido foi criado com status payment_due.
+  - process_payment: Solicita o processamento do pagamento para um pedido.
+  - payment_processed: Notifica que o pagamento foi processado com sucesso.
+  - order_placed: Notifica que o status do pedido foi alterado para placed.
+  - order_confirmed: Notifica que a cozinha confirmou o pedido.
+  - order_processing: Notifica que o pedido está sendo processado pela cozinha.
+  - order_ready_to_pickup: Notifica que o pedido está pronto para ser retirado.
+  - order_concluded: Notifica que o pedido foi concluído após retirada pelo cliente.
+  - order_cancelled: Notifica que o pedido foi cancelado.
+ 
+- Fluxo de criação de pedidos
+  - Frontend envia uma solicitação para o Orquestrador criar um pedido.
+  - Orquestrador publica uma mensagem na fila create_order.
+  - Microsserviço de Pedido consome a mensagem da fila create_order, cria o pedido no banco de dados com status payment_due, e publica uma mensagem na fila order_created.
+  - Orquestrador consome a mensagem da fila order_created e publica uma mensagem na fila process_payment.
+  - Microsserviço de Pagamento consome a mensagem da fila process_payment, processa o pagamento, e publica uma mensagem na fila payment_processed.
+  - Orquestrador consome a mensagem da fila payment_processed, atualiza o status do pedido para placed, e publica uma mensagem na fila order_placed.
+  - Microsserviço de Pedido consome a mensagem da fila order_placed e notifica a cozinha publicando uma mensagem na fila order_confirmed.
+  - Cozinha consome a mensagem da fila order_confirmed, atualiza o status do pedido para processing, e publica uma mensagem na fila order_processing.
+  - Cozinha conclui o preparo do pedido, atualiza o status para ready_to_pickup, e publica uma mensagem na fila order_ready_to_pickup.
+  - Orquestrador consome a mensagem da fila order_ready_to_pickup e publica uma mensagem na fila notify_customer.
+  - Cliente é notificado no telão que o pedido está pronto para retirada.
+  - Balcão atualiza o status do pedido para concluded após a retirada e publica uma mensagem na fila order_concluded.
+
 </details>
 
 <details>
-  <summary> <h2> DevSecOps - Pipeline </h2> </summary>
+  <summary> <h2> DevSecOps - Pipeline / OWASP Zap - Reports </h2> </summary>
 
 A pipeline de DevSecOps para este projeto pode ser acessada através do seguinte link:
 
 [DevSecOps Pipeline](https://github.com/tshadz-fiap-postech-soat3/devsecops-pipeline)
 
+O vídeo explicativo da implementação da DevSecOps pipeline pode ser acessado através do seguinte link:
+
+[DevSecOps Pipeline Vídeo](https://drive.google.com/file/d/1Wg2Wze2vEdpC86JXzlcyIk-llbr2Y9C3/view?usp=drive_link)
 __________________
+
+### DevSecOps - Pipeline
 
   A pipeline de segurança automatiza a detecção de vulnerabilidades em várias camadas do ciclo de desenvolvimento, desde a infraestrutura até o código e dependências, garantindo uma abordagem abrangente para a segurança do software.
   
@@ -160,15 +240,13 @@ __________________
   
 ![image](https://github.com/user-attachments/assets/224e6e20-5ad9-48c5-8cfa-758146a02cc2)
 
-</details>
-
-<details>
-  <summary> <h2> OWASP Zap - Reports </h2> </summary>
+________________________________
 
 ### DAST Reports
 Aqui estão os relatórios DAST gerados para `product-api` e `order-api`:
 ________________________________
-### PRODUCT-API
+
+#### PRODUCT-API
 
 Primeira análise:
   - <b>Link para o relatório completo na Pipeline:</b> [DevSecOps Pipeline Summary](https://github.com/tshadz-fiap-postech-soat3/product-api/actions/runs/10283732784)
@@ -183,7 +261,7 @@ Segunda Análise:
 ![image](https://github.com/user-attachments/assets/7b31cffe-66c3-46ba-9c5d-4df17865840c)
 ________________________________
 
-### ORDER-API
+#### ORDER-API
 
 Primeira análise:
   - <b>Link para o relatório completo na Pipeline:</b> [DevSecOps Pipeline Summary](https://github.com/tshadz-fiap-postech-soat3/order-api/actions/runs/10286649139)
@@ -196,4 +274,7 @@ ________________________________
 
 <details>
   <summary> <h2> LGPD </h2> </summary>
+  
+[LGPD - RIPD - PosTech-SOAT3-G68](https://docs.google.com/document/d/1VQAqVCFKz5fwItgQyFCmHVlZqSLtLnqX/edit?usp=drive_link&ouid=115953080927918010909&rtpof=true&sd=true)
+
 </details>
