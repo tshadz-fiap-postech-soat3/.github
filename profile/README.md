@@ -130,6 +130,12 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/148071b1-d4
 <details>
   <summary> <h2> DevSecOps - Pipeline </h2> </summary>
 
+A pipeline de DevSecOps para este projeto pode ser acessada através do seguinte link:
+
+[DevSecOps Pipeline](https://github.com/tshadz-fiap-postech-soat3/devsecops-pipeline)
+
+__________________
+
   A pipeline de segurança automatiza a detecção de vulnerabilidades em várias camadas do ciclo de desenvolvimento, desde a infraestrutura até o código e dependências, garantindo uma abordagem abrangente para a segurança do software.
   
 1. IAC - Trivy:
@@ -154,7 +160,29 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/148071b1-d4
   
 ![image](https://github.com/user-attachments/assets/224e6e20-5ad9-48c5-8cfa-758146a02cc2)
 
+</details>
 
+<details>
+  <summary> <h2> OWASP Zap - Reports </h2> </summary>
+
+### DAST Reports
+
+Aqui estão os relatórios DAST gerados para `order-api` e `product-api` :
+
+<h4>PRODUCT-API</h4>
+
+Primeira análise:
+  - <b>Link para o relatório completo na Pipeline:</b> [DevSecOps Pipeline Summary](https://github.com/tshadz-fiap-postech-soat3/product-api/actions/runs/10283732784)
+  - <b>Report:</b>
+  
+![image](https://github.com/user-attachments/assets/13c16e0d-ece9-4dc8-90e9-ad67978e8e92)
+
+Segunda Análise:
+  - <b>Link para o relatório completo na Pipeline:</b> [DevSecOps Pipeline Summary](https://github.com/tshadz-fiap-postech-soat3/product-api/actions/runs/10283851553)
+  - <b>Report:</b>
+
+![image](https://github.com/user-attachments/assets/7b31cffe-66c3-46ba-9c5d-4df17865840c)
+________________________________
 </details>
 
 <details>
