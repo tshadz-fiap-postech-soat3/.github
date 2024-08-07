@@ -166,10 +166,9 @@ __________________
   <summary> <h2> OWASP Zap - Reports </h2> </summary>
 
 ### DAST Reports
-
-Aqui estão os relatórios DAST gerados para `order-api` e `product-api` :
-
-<h4>PRODUCT-API</h4>
+Aqui estão os relatórios DAST gerados para `product-api` e `order-api`:
+________________________________
+### PRODUCT-API
 
 Primeira análise:
   - <b>Link para o relatório completo na Pipeline:</b> [DevSecOps Pipeline Summary](https://github.com/tshadz-fiap-postech-soat3/product-api/actions/runs/10283732784)
@@ -183,6 +182,16 @@ Segunda Análise:
 
 ![image](https://github.com/user-attachments/assets/7b31cffe-66c3-46ba-9c5d-4df17865840c)
 ________________________________
+
+### ORDER-API
+
+Primeira análise:
+  - <b>Link para o relatório completo na Pipeline:</b> [DevSecOps Pipeline Summary](https://github.com/tshadz-fiap-postech-soat3/order-api/actions/runs/10286649139)
+  - <b>Report:</b>
+  
+![image](https://github.com/user-attachments/assets/f55415aa-a37a-411b-9680-3d990a8e22d0)
+________________________________
+
 </details>
 
 <details>
