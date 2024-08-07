@@ -6,6 +6,7 @@
 - `product-api`: MSA - Produtos.
   - [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api)
 
+## FASE 4
 <details>
   <summary> <h2> Entregáveis FASE 4 </h2> </summary>
   
@@ -105,4 +106,57 @@ https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/d4b8498b-53
 
 https://github.com/tshadz-fiap-postech-soat3/.github/assets/80704054/148071b1-d4ba-4f23-b0ab-d8718b2cf531
 
+</details>
+
+## FASE 5
+
+<details>
+  <summary> <h2> Entregáveis FASE 5 </h2> </summary>
+  
+- [x] Utilizar padrão SAGA para aumentar a disponibilidade da aplicação
+- [x] Justificativa do padrão escolhido
+- [x] Fluxos: Pagamento Aprovado e Pagamento Recusado
+- [x] Utilizar gerenciador de mensageria
+- [x] Executar OWASP Zap nos fluxos de Listar cardápio / Realização do Pedido / Geração do pagamento / Confirmação do Pagamento
+- [x] Relatório RIPD
+- [x] Rota para o cliente solicitar a exclusão/inativação de seus dados pessoais
+
+</details>
+
+<details>
+  <summary> <h2> SAGA </h2> </summary>
+</details>
+
+<details>
+  <summary> <h2> DevSecOps - Pipeline </h2> </summary>
+
+  A pipeline de segurança automatiza a detecção de vulnerabilidades em várias camadas do ciclo de desenvolvimento, desde a infraestrutura até o código e dependências, garantindo uma abordagem abrangente para a segurança do software.
+  
+1. IAC - Trivy:
+
+- Trivy é uma ferramenta de scanner de segurança que verifica a infraestrutura como código (IaC) em busca de vulnerabilidades e configurações incorretas. Ele pode analisar arquivos como Dockerfile, Kubernetes, Terraform, etc., ajudando a garantir que a infraestrutura seja provisionada com segurança desde o início.
+
+2. SAST - Semgrep:
+
+- Semgrep é uma ferramenta de análise estática de código (SAST) que verifica o código fonte em busca de vulnerabilidades de segurança, bugs e padrões de codificação inseguros. Ele usa regras definidas para detectar problemas antes que o código seja implementado.
+
+3. SCA - Dependency-Check:
+
+- Dependency-Check é uma ferramenta de análise de componentes de software (SCA) que verifica as dependências de um projeto em busca de vulnerabilidades conhecidas. Ele examina bibliotecas de terceiros usadas no projeto e alerta sobre possíveis riscos.
+
+4. DAST - OWASP ZAP:
+
+- OWASP ZAP (Zed Attack Proxy) é uma ferramenta de teste dinâmico de segurança de aplicações (DAST). Ela simula ataques em tempo real contra uma aplicação web para identificar vulnerabilidades como injeção de SQL, cross-site scripting (XSS), entre outras.
+
+5. Secrets - Gitleaks:
+
+- Gitleaks é uma ferramenta que verifica repositórios Git em busca de informações sensíveis, como chaves de API, senhas e outros segredos que não devem ser expostos no código. Ela ajuda a evitar que credenciais sensíveis sejam comprometidas.
+  
+![image](https://github.com/user-attachments/assets/224e6e20-5ad9-48c5-8cfa-758146a02cc2)
+
+
+</details>
+
+<details>
+  <summary> <h2> LGPD </h2> </summary>
 </details>
