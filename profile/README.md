@@ -13,6 +13,8 @@
 - `product-api`: este repositório contém o código da api de produtos e a lógica para deploy no GCP
   - [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tshadz-fiap-postech-soat3_customer-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tshadz-fiap-postech-soat3_customer-api)
 
+![image](https://github.com/user-attachments/assets/ef12c18c-0ba2-4270-b199-c2d44fe7cd8d)
+
 
 ## FASE 4
 <details>
