@@ -169,7 +169,7 @@ Acesse a [Wiki do Projeto](https://github.com/tshadz-fiap-postech-soat3/soat3-te
   
 O vídeo explicativo da implementação da SAGa Orquestrada pode ser acessado através do seguinte link:
 
-[SAGA Orquestrada Vídeo](https://drive.google.com/file/d/1Wg2Wze2vEdpC86JXzlcyIk-llbr2Y9C3/view?usp=drive_link)
+[SAGA Orquestrada Vídeo](https://drive.google.com/file/d/1jdPQ-712c_R1Dw2AoW6cxKseqe-EG0bO/view?usp=drive_link)
 
 ### Orquestração
 
