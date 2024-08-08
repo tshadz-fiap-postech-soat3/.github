@@ -141,6 +141,30 @@ https://github.com/user-attachments/assets/9993a899-60ad-479e-afed-284d28f1c840
 </details>
 
 <details>
+  <summary> <h2> Descrição do projeto </h2> </summary>
+
+O projeto fast-food-api é um sistema backend desenvolvido para fornecer uma solução robusta e escalável para o Tech Challenge da pós graduação em Software Architecture da FIAP. Ele foi projetado para atender às necessidades de controle de pedidos em uma lanchonete de bairro. 
+
+Acesse a [Wiki do Projeto](https://github.com/tshadz-fiap-postech-soat3/soat3-tech-challenge/wiki) para mais informações a respeito dos:
+
+* Requisitos técnicos (business)
+* Domain-Driven Design
+* S-SDLC
+* Arquitetura
+
+### Tecnologias Utilizadas:
+
+- **Linguagem de Programação**: TypeScript
+- **Framework**: NestJS
+- **Banco de Dados**: MySQL e MongoDB
+- **Serviço de Cloud**:Google Cloud Platform (GCP)
+- **Ferramentas de DevOps**: GitHub Actions, Terraform e SonarCloud.
+- **Gerenciador de Mensaria**: Dev - RabbitMQ / Prod - PubSub
+- **Ferramentas de Testes de Segurança**: Semgrep, Trivy, DependencyCheck, GitLeaks, Owasp Zap
+
+</details>
+
+<details>
   <summary> <h2> SAGA Pattern </h2> </summary>
   
 O vídeo explicativo da implementação da SAGa Orquestrada pode ser acessado através do seguinte link:
@@ -170,18 +194,16 @@ ________________________________
 ### Arquitetura e fluxo de dados
 Diagrama da estrutura na nuvem e comunicação SAGA:
 
-![diagrama de architetura](https://github.com/user-attachments/assets/796d299b-fa97-4c2f-8dbe-259af5bd9ebf)
+![diagrama de architetura](https://github.com/user-attachments/assets/b2df94cf-ab23-4593-968c-0dc6a006459a)
 
 
-![saga orquestrada](https://github.com/user-attachments/assets/281b7719-1d53-459a-93d0-b4a70b325a2c)
-
+![saga orquestrada](https://github.com/user-attachments/assets/5cb2923d-3358-462f-b528-fd71a530ac03)
 
 - Filas
   - create_order: Solicita a criação de um novo pedido.
   - order_created: Notifica que um pedido foi criado com status payment_due.
   - process_payment: Solicita o processamento do pagamento para um pedido.
   - payment_processed: Notifica que o pagamento foi processado com sucesso.
-  - order_placed: Notifica que o status do pedido foi alterado para placed.
   - order_confirmed: Notifica que a cozinha confirmou o pedido.
   - order_processing: Notifica que o pedido está sendo processado pela cozinha.
   - order_ready_to_pickup: Notifica que o pedido está pronto para ser retirado.
@@ -189,18 +211,18 @@ Diagrama da estrutura na nuvem e comunicação SAGA:
   - order_cancelled: Notifica que o pedido foi cancelado.
  
 - Fluxo de criação de pedidos
-  - Frontend envia uma solicitação para o Orquestrador criar um pedido.
-  - Orquestrador publica uma mensagem na fila create_order.
-  - Microsserviço de Pedido consome a mensagem da fila create_order, cria o pedido no banco de dados com status payment_due, e publica uma mensagem na fila order_created.
-  - Orquestrador consome a mensagem da fila order_created e publica uma mensagem na fila process_payment.
-  - Microsserviço de Pagamento consome a mensagem da fila process_payment, processa o pagamento, e publica uma mensagem na fila payment_processed.
-  - Orquestrador consome a mensagem da fila payment_processed, atualiza o status do pedido para placed, e publica uma mensagem na fila order_placed.
-  - Microsserviço de Pedido consome a mensagem da fila order_placed e notifica a cozinha publicando uma mensagem na fila order_confirmed.
-  - Cozinha consome a mensagem da fila order_confirmed, atualiza o status do pedido para processing, e publica uma mensagem na fila order_processing.
-  - Cozinha conclui o preparo do pedido, atualiza o status para ready_to_pickup, e publica uma mensagem na fila order_ready_to_pickup.
-  - Orquestrador consome a mensagem da fila order_ready_to_pickup e publica uma mensagem na fila notify_customer.
-  - Cliente é notificado no telão que o pedido está pronto para retirada.
-  - Balcão atualiza o status do pedido para concluded após a retirada e publica uma mensagem na fila order_concluded.
+  1. **Frontend** envia uma solicitação para o **Orquestrador** criar um pedido.
+  2. **Orquestrador** publica uma mensagem na fila **create_order**.
+  3. **Microsserviço de Pedido** consome a mensagem da fila **create_order**, cria o pedido no banco de dados com status payment_due, e publica uma mensagem na fila **order_created**.
+  4. **Orquestrador** consome a mensagem da fila **order_created** e publica uma mensagem na fila **process_payment**.
+  5. **Microsserviço de Pagamento** consome a mensagem da fila **process_payment**, processa o pagamento, e publica uma mensagem na fila **payment_processed** ou **payment_recused**.
+  6. **Orquestrador** consome a mensagem da fila **payment_processed**, confirma o pedido se o pagamento for processado, e publica uma mensagem na **fila confirm_order**. Caso tenha erro no pagamento, aparecerá na tela do totem avisando problemas com o meio de pagamento
+  7. **Cozinha** consome a mensagem da fila **order_confirmed**.
+  8. **Cozinha** conclui o preparo do pedido, atualiza o status para **ready_to_pickup**, e publica uma mensagem na fila **order_ready_to_pickup**.
+  9. **Orquestrador** consome a mensagem da fila **order_ready_to_pickup** e publica uma mensagem na **fila notify_customer**.
+  10. **Cliente** é notificado no telão que o pedido está pronto para retirada.
+  11. **Balcão** atualiza o status do pedido para concluded após a retirada e publica uma mensagem na fila **order_concluded**.
+  12. **Orquestrador** atualiza o status do pedido para cancelled, se tiver algum problema e o operador informa o cancelamento do pedido.
 
 </details>
 
